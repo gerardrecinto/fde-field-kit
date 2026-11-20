@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-24.04
     permissions: {contents: write, id-token: write, attestations: write}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with: {python-version: "3.13"}
       - run: pip install build pytest && pytest -q && python -m build
       - name: Attest build provenance
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@v4
         with: {subject-path: "dist/*"}
       - name: Publish the release with its files in one step
         env: {GH_TOKEN: "${{ github.token }}"}
