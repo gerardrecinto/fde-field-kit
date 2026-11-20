@@ -1,0 +1,1 @@
+{"site": "acme-east", "region": "us", "replicas": 3, "timeout_seconds": 30, "tls_enabled": true, "admin_email": "ops@acme.example"}

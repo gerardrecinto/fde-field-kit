@@ -1,0 +1,1 @@
+{"site": "acme-west", "region": "us-west", "replicas": "three", "tls_enabeld": true, "admin_email": "ops-at-acme"}

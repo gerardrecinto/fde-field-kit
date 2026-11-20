@@ -1,0 +1,4 @@
+dns = ["no-such-host.invalid"]
+tcp = [{ host = "127.0.0.1", port = 1 }]
+tools = [{ name = "definitely-not-installed", min_version = "1.0" }]
+disk = [{ path = "/", min_gb = 100000 }]

@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fdekit"
+version = "0.1.0"
+description = "Preflight, validate, roll out with rollback, and hand off at a customer site."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+fdekit = "fdekit.cli:main"
+
+[tool.setuptools]
+packages = ["fdekit"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
