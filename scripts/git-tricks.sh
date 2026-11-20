@@ -26,7 +26,8 @@ echo bad > state.txt; git add state.txt; commit "r5 breaks"
 commit "r6"
 BAD=$(git rev-parse HEAD~1)
 git bisect start HEAD HEAD~4 >/dev/null
-FOUND=$(git bisect run sh -c 'grep -q good state.txt' | grep "is the first bad commit" | cut -d' ' -f1)
+git bisect run sh -c 'grep -q good state.txt' >/dev/null
+FOUND=$(git rev-parse refs/bisect/bad)
 git bisect reset >/dev/null 2>&1
 [ "$FOUND" = "$BAD" ] && ok "2 bisect run: found r5 automatically" || die bisect
 
